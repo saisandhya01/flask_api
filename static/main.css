@@ -1,0 +1,38 @@
+body,
+html {
+  font-family: sans-serif;
+  background-color: lightgray;
+}
+
+.container,
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table,
+td,
+th {
+  border: 1px solid #aaa;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.center-text {
+  text-align: center;
+}
+.bold-text {
+  font-weight: bold;
+}
+
+th {
+  height: 30px;
+}
+
+td {
+  text-align: center;
+  padding: 5px;
+}

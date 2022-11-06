@@ -4,10 +4,19 @@
 <div>
   {% if banks|length < 1 %}
   <h4 style="text-align: center">Bank list is empty</h4>
-  {% else %} {% for bank in banks %}
-  <a href="/bank/{{bank['bank_id']}}">
-    <li>{{bank['bank_name']}}</li>
-  </a>
-  {% endfor %} {% endif %}
+  {% else %}
+  <table>
+    <tr>
+      <th>Bank List</th>
+    </tr>
+    {% for bank in banks %}
+    <tr>
+      <td>
+        <a href="/bank/{{bank['bank_id']}}"> {{bank['bank_name']}} </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
 </div>
 {% endblock %}

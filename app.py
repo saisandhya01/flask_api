@@ -12,7 +12,8 @@ def index():
 @app.route('/bank/<int:id>')
 def get_branches(id):
     bank_branches = db.loc[db['bank_id'] == id]
-    return render_template('branches.html', branches=bank_branches.to_dict(orient='records'))
+    single_branch = db['bank_name'].values[:1]
+    return render_template('branches.html', bank_name = single_branch[0],branches=bank_branches.to_dict(orient='records'))
 
 @app.route('/<id>')
 def get_bank(id):

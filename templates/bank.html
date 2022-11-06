@@ -3,15 +3,17 @@
 {% endblock %} {% block body %}
 <div>
   {% if bank|length < 1 %}
-  <h4 style="text-align: center">Bank is not found.</h4>
+  <h4 class="center-text">Bank is not found.</h4>
   {% else %} {% for b in bank %}
-  <p>IFSC Code : {{b['ifsc']}}</p>
-  <p>Bank Name : {{b['bank_name']}}</p>
-  <p>Branch : {{b['branch']}}</p>
-  <p>District : {{b['district']}}</p>
-  <p>City: {{b['city']}}</p>
-  <p>State: {{b['state']}}</p>
-  <p>Address: {{b['address']}}</p>
+  <div class="center-div">
+    <p><span class="bold-text">IFSC Code :</span> {{b['ifsc']}}</p>
+    <p><span class="bold-text">Bank Name :</span> {{b['bank_name']}}</p>
+    <p><span class="bold-text">Branch :</span> {{b['branch']}}</p>
+    <p><span class="bold-text">District :</span> {{b['district']}}</p>
+    <p><span class="bold-text">City:</span> {{b['city']}}</p>
+    <p><span class="bold-text">State:</span> {{b['state']}}</p>
+    <p><span class="bold-text">Address:</span> {{b['address']}}</p>
+  </div>
   {% endfor %} {% endif %}
 </div>
 {% endblock %}

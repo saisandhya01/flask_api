@@ -4,10 +4,19 @@
 <div>
   {% if branches|length < 1 %}
   <h4 style="text-align: center">This bank has no branches.</h4>
-  {% else %} {% for branch in branches %}
-  <a href="/{{branch['ifsc']}}">
-    <li>{{branch['bank_name']}} - {{branch['branch']}}</li>
-  </a>
-  {% endfor %} {% endif %}
+  {% else %}
+  <table>
+    <tr>
+      <th>Branches of {{bank_name}}</th>
+    </tr>
+    {% for branch in branches %}
+    <tr>
+      <td>
+        <a href="/{{branch['ifsc']}}"> {{branch['branch']}} </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
 </div>
 {% endblock %}
