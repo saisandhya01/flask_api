@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block head %}
+<title>Bank Branches</title>
+{% endblock %} {% block body %}
+<div>
+  {% if branches|length < 1 %}
+  <h4 style="text-align: center">This bank has no branches.</h4>
+  {% else %} {% for branch in branches %}
+  <a href="/{{branch['ifsc']}}">
+    <li>{{branch['bank_name']}} - {{branch['branch']}}</li>
+  </a>
+  {% endfor %} {% endif %}
+</div>
+{% endblock %}

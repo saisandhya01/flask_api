@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block head %}
+<title>Bank Branches</title>
+{% endblock %} {% block body %}
+<div>
+  {% if bank|length < 1 %}
+  <h4 style="text-align: center">Bank is not found.</h4>
+  {% else %} {% for b in bank %}
+  <p>IFSC Code : {{b['ifsc']}}</p>
+  <p>Bank Name : {{b['bank_name']}}</p>
+  <p>Branch : {{b['branch']}}</p>
+  <p>District : {{b['district']}}</p>
+  <p>City: {{b['city']}}</p>
+  <p>State: {{b['state']}}</p>
+  <p>Address: {{b['address']}}</p>
+  {% endfor %} {% endif %}
+</div>
+{% endblock %}
